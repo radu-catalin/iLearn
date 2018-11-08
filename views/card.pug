@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div.row
+    
+    div.back-link
+      h1.t-title #{title}
+      h4
+        a.color-light-dark(href='/')
+          i.fa.fa-arrow-left
+          | Reveniţi pe prima pagină
+    div.question-container.border-content.border-radius-6.bgcolor-white.col-sm-12
+      div.inner-question.inner-top
+        h3.color-gray
+          | Întrebarea 
+          span.current-question #{current_question}
+          |  din 
+          span.total-questions #{total_questions}
+        h2.color-light-dark #{question}
+      div.inner-question.inner-middle.bgcolor-thin-gray
+        p Apăsaţi "Afişează Răspunsul" dacă doriţi să vedeţi răspunsul nostru.
+        div.buttons-container
+          a.previous-question.color-white.bgcolor-purple.bgcolor-purple-hover.border-radius-2(href=`/${cardName}?question=${current_question - 1}`)
+            i.fa.fa-arrow-left
+            span Întrebarea Anterioară
+          a.next-question.color-white.bgcolor-purple.bgcolor-purple-hover.border-radius-2(href=`/${cardName}?question=${current_question + 1}`)
+            span Următoarea Întrebare
+            i.fa.fa-arrow-right
+        // end buttons-container
+      div.inner-question.inner-bottom
+        div.wrapper-inner-question
+          button.show-answer.border-button.border-radius-6.color-gray Afişează Răspunsul
+          div.answer.col-12.border-content.border-radius-6
+            p #{answer}

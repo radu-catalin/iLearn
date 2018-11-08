@@ -1,0 +1,22 @@
+nav(class='bgcolor-white box-shadow')
+  div.container
+    div#logo
+      h2.color-purple 
+        a.color-purple(href='/') iLearn
+    ul.uppercase
+      if !session
+        li
+          a(href='/login' class='color-purple') login
+        li  
+          a(href='/register' class='color-light-gray') Înscrie-te
+      else
+        li.random.color-white.bgcolor-purple.bgcolor-purple-hover.border-radius-2
+          a.color-white(href='/random') Aleator
+        li
+          a.color-purple(href='/') Colecţie
+        li
+          a.color-light-gray(href='/logout')
+            i.fa.fa-sign-out
+            | Delogare
+          
+        

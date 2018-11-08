@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div.row
+    div.error-container.col-12
+      h1.color-purple #{error.status}
+      p #{error.message}
+      a.color-purple.border-content.border-radius-6(href='/')
+        i.fa.fa-arrow-left
+        | Înapoi
